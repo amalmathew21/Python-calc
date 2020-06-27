@@ -12,6 +12,7 @@ class Calculator:
         menubar = Menu(master)
         list=Menu(menubar,tearoff=0)
         list.add_command(label="history")
+        list.add_command(label="Exit",command=master.quit)
         menubar.add_cascade(label="Options",menu=list)
         master.config(menu=menubar)
         #display field
