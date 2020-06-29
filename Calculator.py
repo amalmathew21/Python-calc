@@ -9,11 +9,23 @@ class Calculator:
         self.f = open("history_calc.txt", "r")
         self.temp = Tk()
         self.temp.title("history")
-        self.temp.geometry("100x300")
-        self.t = Text(self.temp, height=300, width=100)
+        self.temp.geometry("300x300+300+100")
+        self.t = Text(self.temp, height=200, width=100)
         self.t.pack()
         self.t.insert(END, self.f.read())
+        menubar = Menu(self.temp)
+        menu_list = Menu(menubar, tearoff=0)
+        menu_list.add_command(label='history clear', command=self.hist_clear)
+        menu_list.add_command(label="Exit", command=self.temp.destroy)
+        menubar.add_cascade(label="Options", menu=menu_list)
+        self.temp.config(menu=menubar)
 
+    def hist_clear(self):
+        self.fc = open("history_calc.txt", "r+")
+        self.fc.truncate(0)
+        self.fc.close()
+        self.temp.destroy()
+        self.hist()
     def click_button(self, val):
         global content
         content += str(val)
