@@ -172,7 +172,7 @@ class Calculator:
         lclear = Label(main_label, bg="black")
         lclear.grid(row=1, column=4, padx=5, pady=5)
         bclear = Button(lclear, text='C', font=('Helvetica', '16'), command=lambda: self.clear_btn(), bg='RED',
-                        fg='#823E30', width=2)
+                        fg='black', width=2)
         bclear.pack()
 
         leq = Label(main_label, bg="black")
