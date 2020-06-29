@@ -58,6 +58,7 @@ class Calculator:
         first = content
         first += opr
         content = ""
+        self.result.set(first)
 
     def ce(self):
         global content
