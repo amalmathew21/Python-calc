@@ -18,7 +18,7 @@ class Calculator:
         menu_list = Menu(menubar, tearoff=0)
         menu_list.add_command(label='history clear', command=self.hist_clear)
         menu_list.add_command(label="Exit", command=self.temp.destroy)
-        menubar.add_cascade(label="Options", menu=menu_list)
+        menubar.add_cascade(label="Options", menu=menu_list,font=("arial",10))
         self.temp.config(menu=menubar)
 
     def hist_clear(self):
@@ -74,7 +74,7 @@ class Calculator:
         menu_list = Menu(menubar, tearoff=0)
         menu_list.add_command(label="history", command=self.hist)
         menu_list.add_command(label="Exit", command=master.quit)
-        menubar.add_cascade(label="Options", menu=menu_list)
+        menubar.add_cascade(label="Options", menu=menu_list, font=("arial",10))
         master.config(menu=menubar)
         # display field
         self.result = StringVar()
